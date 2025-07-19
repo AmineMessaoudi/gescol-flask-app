@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Modifier la Classe{% endblock %}
+
+{% block content %}
+    <h1>Modifier la Classe {{ classe.identifiant }}</h1>
+
+    <form method="post">
+        <label for="identifiant">Identifiant (max 7 car.):</label><br>
+        <input type="text" id="identifiant" name="identifiant" value="{{ classe.identifiant }}" maxlength="7" required><br><br>
+
+        <label for="niveau">Niveau:</label><br>
+        <input type="number" id="niveau" name="niveau" value="{{ classe.niveau }}" required><br><br>
+
+        <label for="section">Section:</label><br>
+        <input type="text" id="section" name="section" value="{{ classe.section }}" required><br><br>
+
+        <label for="num_labo">Numéro de Labo:</label><br>
+        <input type="number" id="num_labo" name="num_labo" value="{{ classe.num_labo }}"><br><br>
+
+        <button type="submit">Enregistrer les modifications</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('gerer_classes') }}">Annuler</a>
+{% endblock %}

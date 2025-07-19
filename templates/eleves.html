@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Gestion des Élèves{% endblock %}
+
+{% block content %}
+    <h1>Gestion des Élèves</h1>
+
+    <h2>Ajouter un Élève</h2>
+    <form method="post">
+        <label for="nom">Nom:</label><br>
+        <input type="text" id="nom" name="nom" required><br><br>
+
+        <label for="prenom">Prénom:</label><br>
+        <input type="text" id="prenom" name="prenom" required><br><br>
+
+        <label for="num_ordre">Numéro d'ordre:</label><br>
+        <input type="text" id="num_ordre" name="num_ordre" required><br><br>
+
+        <label for="classe_id">Classe:</label><br>
+        <select id="classe_id" name="classe_id" required>
+            <option value="">-- Choisissez une classe --</option>
+            {% for classe in classes %}
+                <option value="{{ classe.id }}">{{ classe.identifiant }} - {{ classe.section }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Ajouter l'Élève</button>
+    </form>
+
+    <hr>
+
+    <h2>Liste des Élèves</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>N° Ordre</th>
+                <th>Classe</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for eleve in eleves %}
+                <tr>
+                    <td data-label="Nom"><a href="{{ url_for('details_eleve', eleve_id=eleve.id) }}">{{ eleve.nom }}</a></td>
+                    <td data-label="Prénom"><a href="{{ url_for('details_eleve', eleve_id=eleve.id) }}">{{ eleve.prenom }}</a></td>
+                    <td data-label="N° Ordre">{{ eleve.num_ordre }}</td>
+                    <td data-label="Classe">{{ eleve.classe.identifiant }}</td>
+                    <td data-label="Actions" class="action-buttons">
+                        <a href="{{ url_for('modifier_eleve', eleve_id=eleve.id) }}">Modifier</a>
+                        <form method="post" action="{{ url_for('supprimer_eleve', eleve_id=eleve.id) }}" style="display:inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet élève ?');">
+                            <button type="submit">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun élève n'a été ajouté pour le moment.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

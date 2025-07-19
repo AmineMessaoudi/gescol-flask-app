@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil - Gescol{% endblock %}
+
+{% block content %}
+    <h1>Bienvenue sur Gescol !</h1>
+    <p>Gescol est votre outil de gestion pédagogique simple et efficace. Il vous permet de centraliser et d'organiser toutes les informations essentielles concernant vos élèves et leurs résultats scolaires.</p>
+
+    <h2>Fonctionnalités Clés :</h2>
+    <ul>
+        <li><strong>Gestion des Classes :</strong> Créez, modifiez et supprimez vos classes avec des identifiants uniques, niveaux, sections et numéros de laboratoire.</li>
+        <li><strong>Gestion des Élèves :</strong> Ajoutez, modifiez et supprimez les élèves, en les associant à une classe spécifique. Chaque élève possède un nom, un prénom et un numéro d'ordre unique.</li>
+        <li><strong>Gestion des Notes :</strong> Saisissez les notes d'informatique pour chaque élève, en spécifiant le type (Devoir de Contrôle, Devoir de Synthèse, Note de Contrôle Continu) et le trimestre.</li>
+        <li><strong>Calcul des Moyennes :</strong> Visualisez automatiquement les moyennes trimestrielles de chaque élève, avec un coefficient double pour les Devoirs de Synthèse.</li>
+    </ul>
+
+    <hr>
+
+    <p>Date et Heure Actuelles : <span id="current-time"></span></p>
+{% endblock %}

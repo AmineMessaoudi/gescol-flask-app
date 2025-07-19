@@ -1,0 +1,15 @@
+# Python virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# IDE and editor specific files
+.idea/
+.vscode/
+*.swp
+
+# SQLite database file if you have one
+*.db
+instance/

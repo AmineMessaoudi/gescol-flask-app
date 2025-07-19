@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Gescol{% endblock %}
+
+{% block content %}
+    <h1>Tableau de Bord</h1>
+
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <h2>Total Classes</h2>
+            <p>{{ total_classes }}</p>
+        </div>
+        <div class="stat-card">
+            <h2>Total Élèves</h2>
+            <p>{{ total_eleves }}</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>Statistiques par Classe</h2>
+    <table class="dashboard-table">
+        <thead>
+            <tr>
+                <th>Identifiant</th>
+                <th>Niveau</th>
+                <th>Section</th>
+                <th>Nombre d'Élèves</th>
+                <th>Moyenne Générale</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stat in stats_classes %}
+                <tr>
+                    <td data-label="Identifiant">{{ stat.identifiant }}</td>
+                    <td data-label="Niveau">{{ stat.niveau }}</td>
+                    <td data-label="Section">{{ stat.section }}</td>
+                    <td data-label="Nombre d'Élèves">{{ stat.nb_eleves }}</td>
+                    <td data-label="Moyenne Générale">{{ stat.moyenne_generale }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucune statistique de classe disponible.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
