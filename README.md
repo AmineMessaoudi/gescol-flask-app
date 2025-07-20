@@ -126,6 +126,17 @@ gescol/
     └── register.html       # Page d'inscription
 ```
 
+## Améliorations Futures (TODO)
+
+Voici quelques pistes d'amélioration et de nouvelles fonctionnalités envisagées pour le projet Gescol :
+
+*   **Gestion des Matières/Cours :** Ajouter la possibilité de définir différentes matières et d'y associer les notes.
+*   **Validation des Formulaires Côté Client :** Implémenter des validations JavaScript pour une meilleure expérience utilisateur.
+*   **Design Responsive :** Optimiser l'interface pour une compatibilité totale avec les appareils mobiles et tablettes.
+*   **Tests Unitaires et d'Intégration :** Développer une suite de tests pour assurer la robustesse et la maintenabilité du code.
+*   **Conteneurisation (Docker) :** Fournir une configuration Docker pour faciliter le déploiement de l'application.
+*   **Localisation (i18n) :** Ajouter la prise en charge de plusieurs langues (arabe, français) pour l'interface utilisateur.
+
 ## Contribution
 
 Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce projet, n'hésitez pas à soumettre des "issues" ou des "pull requests".
