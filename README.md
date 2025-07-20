@@ -8,7 +8,7 @@
 
 ## Description du Projet
 
-Gescol est une application web de gestion pédagogique développée avec Flask. Elle permet aux utilisateurs de gérer leurs classes, leurs élèves et les notes associées de manière simple et intuitive. L'application inclut des fonctionnalités d'authentification pour garantir la séparation des données entre les différents utilisateurs.
+Gescol est une application web de gestion pédagogique développée avec Flask, **spécifiquement conçue pour les professeurs d'informatique en Tunisie**. Elle permet aux utilisateurs de gérer leurs classes, leurs élèves et les notes associées de manière simple et intuitive. L'application inclut des fonctionnalités d'authentification pour garantir la séparation des données entre les différents utilisateurs.
 
 ## Fonctionnalités Clés
 
